@@ -1,0 +1,145 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  background: black;
+  color: white;
+  padding: 30px;
+  gap: 100px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 345px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+  margin: 10px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: underline;
+  font-size: 14px;
+  outline: none;
+  border: none;
+}
+
+.footer-links a:focus,
+.footer-links a:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.contact-section p {
+  margin: 4px 0; /* Also reduced from 8px */
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 6px 0; /* Reduced from 8px */
+  gap: 1px;
+}
+
+
+.email-link {
+  color: white;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.email-link:hover {
+  color: #00FFFF;
+  text-decoration: none;
+}
+
+.email-link:focus,
+.email-link:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: color 0.3s;
+  outline: none;
+  border: none;
+}
+
+.social-icons a:hover {
+  color: #00FFFF;
+}
+
+.social-icons a:focus,
+.social-icons a:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  color: #00FFFF;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-section p {
+    justify-content: center;
+    gap: 4px; /* space between icon and text */
+    margin: 4px 0; /* less space between lines */
+  }
+
+  .email-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

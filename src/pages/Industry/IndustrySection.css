@@ -1,0 +1,230 @@
+:root {
+  --grad: linear-gradient(90deg, #29f1e5 0%, #00bceb 100%);
+}
+
+body {
+  background: rgba(57, 59, 62, 0.3);
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+
+.container {
+  width: 1268px;
+  height: 481px;
+  margin: 40px auto 0 auto;
+    margin-bottom: 40px;
+  border-radius: 15px;
+  display: flex;
+  box-sizing: border-box;
+  box-shadow: 0 8px 32px 0 rgba(20, 50, 70, 0.11),
+              inset 0 0 20px rgba(252, 247, 247, 0.50);
+  border: 1.5px solid rgb(255, 255, 255);
+  overflow: hidden;
+  max-width: 98vw;
+  transition: box-shadow 0.25s;
+}
+
+
+.left-panel {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.left-panel video {
+  width: calc(100% - 44px);
+  height: calc(95% - 10px);
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  background: #000;
+  opacity: 0.99;
+  transition: box-shadow 0.25s;
+}
+
+.left-panel video:hover {
+  filter: brightness(1.04);
+}
+
+.right-panel {
+  width: 540px;
+  color: #fff;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 54px 65px 42px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1.5px solid rgb(255, 255, 255);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.14);
+  position: relative;
+}
+
+.heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  width: 100%;
+  position: relative;
+  margin: 0 0 32px 20px;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  white-space: nowrap;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+  width: 0;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--grad);
+  opacity: 0;
+  transition: width 0.32s cubic-bezier(0.77, 0, 0.18, 1), opacity 0.22s;
+}
+
+.heading:hover::after,
+.heading:focus::after {
+  width: 345px;
+  opacity: 1;
+}
+
+.description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: #fff;
+  opacity: 0.97;
+  margin-top: 6px;
+  max-width: 420px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.11);
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .container {
+    flex-direction: column-reverse;
+    width: 99vw;
+    min-width: 0;
+    height: auto;
+    box-shadow: 0 2px 12px 0 rgba(20, 50, 70, 0.13);
+  }
+
+  .left-panel {
+    width: 100%;
+    height: 240px;
+    padding: 0;
+  }
+
+  .left-panel video {
+    width: calc(100% - 40px);
+    height: calc(100% - 20px);
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+
+  .right-panel {
+    width: 100%;
+    min-height: 220px;
+    padding: 33px 8vw 25px 8vw;
+    border-left: none;
+    border-bottom: 1px solid rgba(41, 241, 229, 0.06);
+  }
+
+  .heading {
+    width: auto;
+    font-size: 27px;
+    line-height: 32px;
+    margin-bottom: 16px;
+    white-space: normal;
+  }
+
+  .heading:hover::after,
+  .heading:focus::after {
+    width: 180px;
+  }
+
+  .description {
+    font-size: 16px;
+    max-width: 99vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    margin: 12px 2vw 0 2vw;
+    width: 98vw;
+    min-width: 0;
+  }
+
+  .right-panel {
+    padding: 17px 5vw 12px 5vw;
+    min-width: 0;
+  }
+
+  .left-panel {
+    height: 148px;
+  }
+
+  .left-panel video {
+    width: calc(100% - 20px);
+    height: calc(100% - 10px);
+  }
+
+  .heading {
+    font-size: 17.5px;
+    line-height: 21px;
+    width: auto;
+    margin-bottom: 13px;
+  }
+
+  .heading:hover::after,
+  .heading:focus::after {
+    width: 84px;
+  }
+
+  .description {
+    font-size: 11.7px;
+    line-height: 17px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .right-panel {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .description {
+    font-size: 9.5px;
+  }
+
+  .container {
+    min-width: 0;
+  }
+}

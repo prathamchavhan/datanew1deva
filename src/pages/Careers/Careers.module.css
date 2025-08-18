@@ -1,0 +1,220 @@
+/* Main layout styles */
+.main {
+  min-height: 190vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  margin: -80px auto 0;
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+  padding-bottom: 50px;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: bold;
+  color: #e4ee22;
+  text-align: center;
+  padding-bottom: 100px;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+/* Hero video section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  margin-bottom: 40px;
+}
+
+.heroVideo {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: white;
+  max-width: 800px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  color: white;
+  max-width: 600px;
+  margin-top: 1rem;
+  
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Form styles */
+.formContainer {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding-top: 100px;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.671);
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  max-width: 1000px;
+  margin: -80px auto 0;
+  z-index: 10;
+}
+
+.formCardVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.formCardHidden {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+}
+
+
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.experienceContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  grid-column: 1 / -1;
+}
+
+.experienceLabel {
+  display: block;
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/* Floating elements */
+.floatingElement {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.5; 
+    transform: scale(1.1);
+  }
+}
+
+.submitButton {
+  width: 80%;
+  padding: 16px 24px;
+  background: transparent;
+  color: #22d3ee;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding-bottom: 24px;
+  border: 2px solid #22d3ee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  justify-self: center;
+  align-self: center;
+  font-family: 'Poppins', sans-serif;
+  margin-top: -20px;
+}
+
+.submitButton:hover {
+  background-color: #FD6262;
+  border-color: #FD6262;
+  color: white;
+}
+

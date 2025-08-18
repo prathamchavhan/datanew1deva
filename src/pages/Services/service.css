@@ -1,0 +1,129 @@
+.underline-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #29F1E5 0%, #00BCEB 100%);
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* Initial hidden state */
+.slide-left,
+.slide-right {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+/* Animation trigger */
+.animate-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-right {
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile Responsive - Keep same layout, just scale */
+@media (max-width: 768px) {
+  .cloudbi-page .container.py-5 {
+    padding: 2rem 1rem !important;
+  }
+
+  .cloudbi-page h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .cloudbi-page h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .cloudbi-page p {
+    font-size: 0.9rem !important;
+  }
+
+  .cloudbi-page .p-4 {
+    padding: 1.5rem !important;
+  }
+
+  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 {
+    gap: 1rem !important;
+  }
+
+  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 img {
+    width: 80px !important;
+    height: auto;
+  }
+
+  .cloudbi-page .container.d-flex.align-items-center.gap-4 {
+    gap: 2rem !important;
+  }
+
+  .cloudbi-page .container.d-flex.align-items-center.gap-4.py-5 {
+    padding: 1.5rem 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cloudbi-page .container.py-5 {
+    padding: 1.5rem 0.5rem !important;
+  }
+
+  .cloudbi-page h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .cloudbi-page h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .cloudbi-page p {
+    font-size: 0.8rem !important;
+  }
+
+  .cloudbi-page .p-4 {
+    padding: 1rem !important;
+  }
+
+  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 img {
+    width: 60px !important;
+  }
+
+  .cloudbi-page .container.d-flex.align-items-center.gap-4 {
+    gap: 1.5rem !important;
+  }
+}

@@ -1,0 +1,113 @@
+.cloudbi-title {
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(90deg, #29f1e5 0%, #00bceb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  background: 'linear-gradient(90deg, #29F1E5 0%, #00BCEB 100%)';
+  font-size: 30px;
+}
+
+/* Underline effect */
+.cloudbi-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #29f1e5 0%, #00bceb 100%);
+  transition: width 0.3s ease;
+}
+
+.cloudbi-title:hover::after {
+  width: 100%;
+}
+
+
+
+.cloudbi-page {
+  width: 100%;
+  /* background-color: #000; */
+  color: white;
+}
+
+.cloudbi-row {
+  padding-top: 0;
+  padding-left: 0;
+}
+
+.cloudbi-img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  margin-top: 0;
+  margin-left: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+.cloudbi-card {
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid #00ffff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.cloudbi-title {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(90deg, #29f1e5 0%, #00bceb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  font-size: 30px;
+  padding-top: 5%;
+}
+
+.cloudbi-text {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.6;
+  align-self: auto;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .cloudbi-row {
+    text-align: center;
+  }
+
+  .cloudbi-img {
+    height: 250px;
+  }
+
+  .cloudbi-card {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cloudbi-img {
+    height: 200px;
+  }
+
+  .cloudbi-title {
+    font-size: 1.4rem;
+  }
+
+  .cloudbi-text {
+    font-size: 0.95rem;
+  }
+}

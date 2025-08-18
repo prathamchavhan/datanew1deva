@@ -1,0 +1,198 @@
+/* ========== GENERAL STYLING ========== */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 15px 30px;
+  position: fixed; /* Make it fixed so it stays at the top */
+  width: 100%; /* Take full width */
+  top: 0; /* Align to top */
+  z-index: 100; /* Ensure it's above other content */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+  flex-wrap: wrap;
+}
+
+.main-header.hidden {
+  transform: translateY(-100%); /* Move header completely out of view */
+}
+
+.logo-box img.logo {
+  width: 250px;
+}
+
+.nav-wrapper {
+  background: #8d8e831a;
+  padding: 0px 5px;
+  justify-content: center;
+  border-radius: 30px;
+  border: 2px solid #29F1E5;
+  transition: all 0.3s ease;
+}
+
+/* ========== NAVIGATION ========== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin-top: 0;
+  padding-top: 0;
+
+}
+
+.nav-links{
+  padding-right: 20px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  padding: 5px 14px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* ========== HOVER & ACTIVE EFFECTS ========== */
+.nav-links li a:hover,
+.services-btn:hover {
+  background-color: #0cfae3;
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0, 188, 235, 0.2);
+  text-decoration: none;
+}
+
+.nav-links li a:active,
+.services-btn:active {
+  transform: scale(0.96);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== SERVICES BUTTON ========== */
+.services-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 3px 14px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* ========== DROPDOWN ========== */
+.dropdown-container {
+  position: relative;
+}
+
+.services-dropdown {
+  position: absolute;
+  background: linear-gradient(90deg, #29F1E5 0%, #00BCEB 100%);
+  padding: 14px 25px;
+  border-radius: 16px;
+  margin-top: 2px;
+  list-style: none;
+  z-index: 100;
+  width: 360px;
+  
+}
+
+.services-dropdown li {
+  margin-bottom: 2px;
+}
+
+.services-dropdown li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.services-dropdown li a:hover {
+  color: none;
+  background: none;
+  box-shadow: none;
+}
+
+/* ========== LEARN BUTTON ========== */
+.learn-btn {
+  margin-left: 20px;
+  background: linear-gradient(90deg, #29F1E5, #00BCEB);
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.learn-btn a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* ========== BURGER MENU ========== */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.burger span {
+  width: 100%;
+  height: 3px;
+  background: #29F1E5;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    z-index: 10;
+  }
+
+  .nav-wrapper.open {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .learn-btn {
+    margin: 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
