@@ -398,7 +398,7 @@ const Hero = () => {
                 Let's Connect
               </MotionButton>
             </div>
-          </MotionDiv>    xdfvdx
+          </MotionDiv>    
         </div>
 
         <div className={styles.overlapSection}>
