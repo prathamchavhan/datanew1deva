@@ -5,16 +5,16 @@
   justify-content: space-between;
   background: #ffffff;
   padding: 15px 30px;
-  position: fixed; /* Make it fixed so it stays at the top */
-  width: 100%; /* Take full width */
-  top: 0; /* Align to top */
-  z-index: 100; /* Ensure it's above other content */
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
+  position: fixed; /* fixed header */
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
   flex-wrap: wrap;
 }
 
 .main-header.hidden {
-  transform: translateY(-100%); /* Move header completely out of view */
+  transform: translateY(-100%);
 }
 
 .logo-box img.logo {
@@ -30,7 +30,6 @@
   transition: all 0.3s ease;
 }
 
-/* ========== NAVIGATION ========== */
 .nav-links {
   display: flex;
   align-items: center;
@@ -38,14 +37,8 @@
   list-style: none;
   margin-top: 0;
   padding-top: 0;
-
-}
-
-.nav-links{
   padding-right: 20px;
   padding-top: 10px;
-  display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -58,7 +51,7 @@
   transition: all 0.3s ease;
 }
 
-/* ========== HOVER & ACTIVE EFFECTS ========== */
+/* Hover & Active Effects */
 .nav-links li a:hover,
 .services-btn:hover {
   background-color: #0cfae3;
@@ -66,14 +59,13 @@
   box-shadow: 0 2px 8px rgba(0, 188, 235, 0.2);
   text-decoration: none;
 }
-
 .nav-links li a:active,
 .services-btn:active {
   transform: scale(0.96);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* ========== SERVICES BUTTON ========== */
+/* Services Button */
 .services-btn {
   background: none;
   border: none;
@@ -86,11 +78,10 @@
   transition: all 0.3s ease;
 }
 
-/* ========== DROPDOWN ========== */
+/* Dropdown */
 .dropdown-container {
   position: relative;
 }
-
 .services-dropdown {
   position: absolute;
   background: linear-gradient(90deg, #29F1E5 0%, #00BCEB 100%);
@@ -100,27 +91,22 @@
   list-style: none;
   z-index: 100;
   width: 360px;
-  
 }
-
 .services-dropdown li {
   margin-bottom: 2px;
 }
-
 .services-dropdown li a {
   text-decoration: none;
   color: #000;
   font-weight: 500;
   transition: 0.3s;
 }
-
 .services-dropdown li a:hover {
-  color: none;
   background: none;
   box-shadow: none;
 }
 
-/* ========== LEARN BUTTON ========== */
+/* Learn Button */
 .learn-btn {
   margin-left: 20px;
   background: linear-gradient(90deg, #29F1E5, #00BCEB);
@@ -128,13 +114,12 @@
   border-radius: 8px;
   transition: 0.3s ease;
 }
-
 .learn-btn a {
   text-decoration: none;
   color: #000000;
 }
 
-/* ========== BURGER MENU ========== */
+/* Burger Menu */
 .burger {
   display: none;
   flex-direction: column;
@@ -144,7 +129,6 @@
   cursor: pointer;
   z-index: 11;
 }
-
 .burger span {
   width: 100%;
   height: 3px;
@@ -152,7 +136,6 @@
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .burger.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -164,6 +147,8 @@
 }
 
 /* ========== RESPONSIVE STYLES ========== */
+
+/* Tablets ≤ 768px */
 @media (max-width: 768px) {
   .nav-wrapper {
     position: absolute;
@@ -177,89 +162,72 @@
     background: #fff;
     z-index: 10;
   }
-
   .nav-wrapper.open {
     display: flex;
   }
-
   .nav-links {
     flex-direction: column;
     gap: 15px;
     padding: 20px 0;
   }
-
   .learn-btn {
     margin: 0;
   }
-
   .burger {
     display: flex;
   }
+}
 
-
-/* ===== For screens ≤ 460px ===== */
+/* Phones ≤ 460px */
 @media (max-width: 460px) {
   .logo-box img.logo {
-    width: 180px; /* reduce logo size */
+    width: 180px;
   }
-
   .main-header {
     padding: 10px 15px;
   }
-
   .nav-wrapper {
     width: 95%;
   }
-
   .nav-links {
     gap: 12px;
   }
-
   .nav-links li a {
     font-size: 14px;
     padding: 6px 12px;
   }
-
   .learn-btn {
     padding: 6px 14px;
     font-size: 14px;
   }
 }
 
-/* ===== For screens ≤ 360px ===== */
+/* Small phones ≤ 360px */
 @media (max-width: 360px) {
   .logo-box img.logo {
-    width: 150px; /* smaller logo */
+    width: 150px;
   }
-
   .main-header {
     padding: 8px 12px;
   }
-
   .nav-wrapper {
     width: 100%;
   }
-
   .nav-links li a {
     font-size: 13px;
     padding: 6px 10px;
   }
-
   .learn-btn {
     padding: 6px 12px;
     font-size: 13px;
   }
-
   .burger {
     width: 22px;
     height: 18px;
   }
-
   .burger span {
     height: 2px;
   }
 }
 
-
-}
 
