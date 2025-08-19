@@ -195,4 +195,71 @@
   .burger {
     display: flex;
   }
+
+
+/* ===== For screens ≤ 460px ===== */
+@media (max-width: 460px) {
+  .logo-box img.logo {
+    width: 180px; /* reduce logo size */
+  }
+
+  .main-header {
+    padding: 10px 15px;
+  }
+
+  .nav-wrapper {
+    width: 95%;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .learn-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
 }
+
+/* ===== For screens ≤ 360px ===== */
+@media (max-width: 360px) {
+  .logo-box img.logo {
+    width: 150px; /* smaller logo */
+  }
+
+  .main-header {
+    padding: 8px 12px;
+  }
+
+  .nav-wrapper {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .learn-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .burger {
+    width: 22px;
+    height: 18px;
+  }
+
+  .burger span {
+    height: 2px;
+  }
+}
+
+
+}
+
