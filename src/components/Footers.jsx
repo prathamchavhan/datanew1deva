@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-section">
-          <img src="/images/dvl.png" alt="Dataventics Logo" className="footer-logo" />
+          <img src="images/dvl.png" alt="Dataventics Logo" className="footer-logo" />
           <ul className="footer-links">
            <li><Link to="/policies">Privacy Policy</Link></li>
         <li><Link to="/policies">Refund Policy</Link></li>
@@ -29,14 +29,14 @@ const Footer = () => {
 
   <div className="d-flex align-items-center mb-2 gap-2">
     <MdEmail />
-    <a href="mailto:contact@dataventics.com" className="email-link text-decoration-none text-white">
-      contact@dataventics.com
+    <a href="mailto:info@dataventics.com" className="email-link text-decoration-none text-white">
+      info@dataventics.com
     </a>
   </div>
 
   <div className="d-flex align-items-center mb-2 gap-2">
     <MdPhone />
-    <span>+91-9325545392</span>
+    <span>+91-9270482746</span>
   </div>
 
   <div className="d-flex align-items-start gap-2">
