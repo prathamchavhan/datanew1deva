@@ -1,11 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Service_main from '../../assets/videos/Service_main.mp4';
 
-
 const AnimatedInput = ({ label, type = 'text', value, onChange, placeholder }) => {
   const [isFocused, setIsFocused] = useState(false);
-  
 
+  const containerStyle = {
+    position: 'relative',
+    marginBottom: '16px',
+    width: '100%',
+  };
+  const labelStyle = { color: 'white', marginBottom: '8px', display: 'block' };
+  const inputStyle = { padding: '10px', borderRadius: '8px', width: '100%' };
+  const glowStyle = {
+    position: 'absolute',
+    inset: 0,
+    boxShadow: isFocused ? '0 0 10px #22d3ee' : 'none',
+    borderRadius: '8px',
+  };
 
   return (
     <div style={containerStyle}>
@@ -28,20 +39,21 @@ const CountrySelect = ({ value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const selected = countries.find(c => c.code === value) || countries[0];
-  
+
+  const containerStyle = { position: 'relative', marginBottom: '16px', width: '100%' };
+  const labelStyle = { color: 'white', marginBottom: '8px', display: 'block' };
+  const flexStyle = { display: 'flex', gap: '8px', width: '100%' };
+  const buttonStyle = { padding: '10px', borderRadius: '8px', flexShrink: 0 };
+  const inputStyle = { padding: '10px', borderRadius: '8px', flexGrow: 1 };
+  const dropdownStyle = { position: 'absolute', top: '100%', left: 0, right: 0, background: '#111', borderRadius: '8px', zIndex: 20 };
+  const optionStyle = { padding: '8px 12px', width: '100%', textAlign: 'left', color: 'white', background: 'transparent', border: 'none', cursor: 'pointer' };
 
   return (
     <div style={containerStyle}>
       <style>{`
         @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-8px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(-8px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
       <label style={labelStyle}>Phone*</label>
@@ -64,7 +76,6 @@ const CountrySelect = ({ value, onChange }) => {
           onBlur={() => setIsFocused(false)}
         />
       </div>
-      
       {isOpen && (
         <div style={dropdownStyle}>
           {countries.map((country) => (
@@ -97,241 +108,126 @@ export default function AdvancedLandingPage() {
     phone: '+1',
     jobTitle: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
   const [testimonialsVisible, setTestimonialsVisible] = useState(false);
-  const [formVisible, setFormVisible] = useState(false);
-  
+
   const testimonialsRef = useRef(null);
-  const formRef = useRef(null);
-  
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target === testimonialsRef.current) {
             setTestimonialsVisible(entry.isIntersecting);
           }
-          if (entry.target === formRef.current) {
-            setFormVisible(entry.isIntersecting);
-          }
         });
       },
-      {
-        threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px'
-      }
+      { threshold: 0.3, rootMargin: '0px 0px -50px 0px' }
     );
 
-    if (testimonialsRef.current) {
-      observer.observe(testimonialsRef.current);
-    }
-    if (formRef.current) {
-      observer.observe(formRef.current);
-    }
+    if (testimonialsRef.current) observer.observe(testimonialsRef.current);
 
     return () => {
-      if (testimonialsRef.current) {
-        observer.unobserve(testimonialsRef.current);
-      }
-      if (formRef.current) {
-        observer.unobserve(formRef.current);
-      }
+      window.removeEventListener('resize', handleResize);
+      if (testimonialsRef.current) observer.unobserve(testimonialsRef.current);
     };
   }, []);
-  
+
   const handleInputChange = (field) => (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: e.target.value
-    }));
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
   };
-  
+
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    
-    // Simulate submission
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
     alert('Form submitted successfully!');
     setIsSubmitting(false);
-    
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      company: '',
-      phone: '+1',
-      jobTitle: ''
-    });
+    setFormData({ firstName: '', lastName: '', email: '', company: '', phone: '+1', jobTitle: '' });
   };
 
-  const mainStyle = {
-    // minHeight: '42vh',
-    padding: '2rem ',
-    color: 'white',
-    overflow: 'hidden',
-    position: 'relative'
+  // ---------- Responsive functions ----------
+  const getContainerPadding = () => {
+    if (windowWidth <= 360) return '16px 12px';
+    if (windowWidth <= 460) return '20px 16px';
+    if (windowWidth <= 760) return '32px 24px';
+    if (windowWidth <= 1020) return '40px 32px';
+    return '50px 40px';
   };
+  const getTitleFontSize = () => {
+    if (windowWidth <= 360) return '20px';
+    if (windowWidth <= 460) return '22px';
+    if (windowWidth <= 760) return '28px';
+    if (windowWidth <= 1020) return '30px';
+    return '32px';
+  };
+  const getDescriptionFontSize = () => {
+    if (windowWidth <= 360) return '12px';
+    if (windowWidth <= 460) return '14px';
+    if (windowWidth <= 760) return '16px';
+    if (windowWidth <= 1020) return '18px';
+    return '20px';
+  };
+  const getVideoHeight = () => {
+    if (windowWidth <= 360) return '180px';
+    if (windowWidth <= 460) return '200px';
+    if (windowWidth <= 760) return '250px';
+    if (windowWidth <= 1020) return '300px';
+    return '350px';
+  };
+  const getGridColumns = () => (windowWidth <= 768 ? '1fr' : '1fr 1fr');
+  const getTextPadding = () => (windowWidth <= 768 ? '0' : '0 32px 0 0');
+  const getCenterLineDisplay = () => (windowWidth <= 768 ? 'none' : 'block');
 
+  // ---------- Original styles with responsive tweaks ----------
+  const mainStyle = { padding: '2rem', color: 'white', overflow: 'hidden', position: 'relative' };
   const backgroundStyle = {
-    position: 'absolute',
-    inset: '0',
+    position: 'absolute', inset: 0,
     backgroundImage: 'url("./assets/images/Background image for whole page.png")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed'
+    backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed'
   };
+  const gradientOverlayStyle = { position: 'absolute', inset: 0, animation: 'pulse 4s infinite' };
+  const gridBackgroundStyle = { position: 'absolute', inset: 0, opacity: 0.1, backgroundSize: '50px 50px' };
 
-  const gradientOverlayStyle = {
-    position: 'absolute',
-    inset: '0',
-    animation: 'pulse 4s infinite'
-  };
-
-  // Grid background pattern
-  const gridBackgroundStyle = {
-    position: 'absolute',
-    inset: '0',
-    opacity: 0.1,
-    backgroundSize: '50px 50px'
-  };
-
-  const containerStyle = {
-    position: 'relative',
-    zIndex: 10,
-    width: '1268px',
-    margin: '0 auto',
-    padding: window.innerWidth <= 480 ? '24px 16px' : window.innerWidth <= 768 ? '32px 20px' : '50px 40px'
-  };
-
+  const containerStyle = { position: 'relative', zIndex: 10, width: '100%', maxWidth: '1268px', margin: '0 auto', padding: getContainerPadding() };
   const testimonialCardStyle = {
     background: 'rgba(57, 59, 62, 0.3)',
     backdropFilter: 'blur(16px)',
     borderRadius: '16px',
     border: '0.5px solid rgba(255, 255, 255, 1)',
-    padding: window.innerWidth <= 480 ? '20px' : window.innerWidth <= 768 ? '24px' : '32px',
-    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-    marginBottom: window.innerWidth <= 768 ? '24px' : '32px',
+    padding: '32px',
+    marginBottom: '32px',
     transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
     opacity: testimonialsVisible ? 1 : 0,
     transform: testimonialsVisible ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.95)'
   };
-
-  const testimonialContentStyle = {
-    display: 'grid',
-    gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : '1fr 1fr',
-    gap: window.innerWidth <= 768 ? '32px' : '0',
-    alignItems: 'center',
-    position: 'relative',
-    fontFamily: 'Poppins, sans-serif'
-  };
-
-  const textSectionStyle = {
-    padding: window.innerWidth <= 768 ? '0' : '0 32px 0 0',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    fontFamily: 'Poppins, sans-serif',
-    transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-    transitionDelay: testimonialsVisible ? '0.2s' : '0s',
-    opacity: testimonialsVisible ? 1 : 0,
-    transform: testimonialsVisible ? 'translateX(0)' : 'translateX(-40px)'
-  };
-
-  const titleStyle = {
-    fontSize: window.innerWidth <= 480 ? '24px' : window.innerWidth <= 768 ? '28px' : '32px',
-    fontWeight: 'bold',
-    color: '#22d3ee',
-    marginBottom: window.innerWidth <= 768 ? '16px' : '24px',
-    fontFamily: 'Poppins, sans-serif'
-  };
-
-  const descriptionStyle = {
-    color: '#d1d5db',
-    lineHeight: '1.6',
-    fontSize: window.innerWidth <= 480 ? '14px' : '20px',
-    fontFamily: 'Poppins, sans-serif',
-  };
-
-  const videoContainerStyle = {
-    width: window.innerWidth <= 768 ? '100%' : '102%',
-    height: window.innerWidth <= 768 ? '250px' : '110%',
-    minHeight: window.innerWidth <= 768 ? '250px' : '300px',
-    position: 'relative',
-    padding: window.innerWidth <= 768 ? '0' : '0 0 0 21px',
-    transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-    transitionDelay: testimonialsVisible ? '0.4s' : '0s',
-    opacity: testimonialsVisible ? 1 : 0,
-    transform: testimonialsVisible ? 'translateX(0) rotateY(0deg)' : 'translateX(40px) rotateY(10deg)'
-  };
-
-  const centerLineStyle = {
-    position: 'absolute',
-    left: '50%',
-    top: '-10%',
-    bottom: '-10%',
-    width: '1px',
-    background: 'rgba(255, 255, 255, 1)',
-    transform: 'translateX(-70%)',
-    zIndex: 1,
-    transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-    transitionDelay: testimonialsVisible ? '0.6s' : '0s',
-    opacity: testimonialsVisible ? 1 : 0,
-    scaleY: testimonialsVisible ? 1 : 0,
-    display: window.innerWidth <= 768 ? 'none' : 'block'
-  };
-
+  const testimonialContentStyle = { display: 'grid', gridTemplateColumns: getGridColumns(), gap: windowWidth <= 768 ? '32px' : '0', alignItems: 'center', position: 'relative', fontFamily: 'Poppins, sans-serif' };
+  const textSectionStyle = { padding: getTextPadding(), display: 'flex', flexDirection: 'column', justifyContent: 'center', fontFamily: 'Poppins, sans-serif', transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)', transitionDelay: testimonialsVisible ? '0.2s' : '0s', opacity: testimonialsVisible ? 1 : 0, transform: testimonialsVisible ? 'translateX(0)' : 'translateX(-40px)' };
+  const titleStyle = { fontSize: getTitleFontSize(), fontWeight: 'bold', color: '#22d3ee', marginBottom: windowWidth <= 768 ? '16px' : '24px', fontFamily: 'Poppins, sans-serif' };
+  const descriptionStyle = { color: '#d1d5db', lineHeight: 1.6, fontSize: getDescriptionFontSize(), fontFamily: 'Poppins, sans-serif' };
+  const videoContainerStyle = { width: '100%', height: getVideoHeight(), position: 'relative', borderRadius: '16px', overflow: 'hidden', marginTop: '24px' };
+  const centerLineStyle = { position: 'absolute', left: '50%', top: '-10%', bottom: '-10%', width: '1px', background: 'rgba(255, 255, 255, 1)', transform: 'translateX(-70%)', zIndex: 1, transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)', transitionDelay: testimonialsVisible ? '0.6s' : '0s', opacity: testimonialsVisible ? 1 : 0, scaleY: testimonialsVisible ? 1 : 0, display: getCenterLineDisplay() };
 
   return (
     <div style={mainStyle}>
       <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.7; }
-        }
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        @keyframes ping {
-          75%, 100% {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
-        @keyframes bounce {
-          0%, 100% {
-            transform: translateY(-25%);
-            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-          }
-          50% {
-            transform: translateY(0);
-            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-          }
-        }
+        @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.7;} }
       `}</style>
-      
-      {/* Animated background */}
-      <div style={{
-        ...backgroundStyle,
-        
-      }}>
+
+      <div style={backgroundStyle}>
         <div style={gridBackgroundStyle}></div>
         <div style={gradientOverlayStyle}></div>
       </div>
-      
-      {/* Main content */}
+
       <div style={containerStyle}>
-        {/* Client Testimonials Section */}
         <div ref={testimonialsRef} style={testimonialCardStyle}>
           <div style={testimonialContentStyle}>
-            {/* Center dividing line */}
             <div style={centerLineStyle}></div>
-            
             <div style={textSectionStyle}>
               <h2 style={titleStyle}>Our Services</h2>
               <p style={descriptionStyle}>
@@ -339,51 +235,17 @@ export default function AdvancedLandingPage() {
               </p>
             </div>
             <div style={videoContainerStyle}>
-              <div
-                style={{
-                  src : {Service_main},
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '16px',
-                  background: 'linear-gradient(135deg, #1e293b 0%, #334155 50%, #1e293b 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#64748b',
-                  fontSize: '18px',
-                  fontWeight: '500',
-                  border: 'rgba(100, 116, 139, 0.3)',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-              >
-                <div style={{
-                  position: 'absolute',
-                  inset: '0',
-                  background: 'linear-gradient(45deg, rgba(34, 211, 238, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)',
-                  animation: 'pulse 3s infinite'
-                }}></div>
-                <video
-                  src={Service_main}
-                  autoPlay
-                  loop
-                  muted
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '16px',
-                    objectFit: 'cover',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    zIndex: 1
-                  }}
-                />
-              </div>
+              <video
+                src={Service_main}
+                autoPlay
+                loop
+                muted
+                style={{ width: '100%', height: '100%', borderRadius: '16px', objectFit: 'cover' }}
+              />
             </div>
           </div>
         </div>
-        </div>
       </div>
+    </div>
   );
 }
