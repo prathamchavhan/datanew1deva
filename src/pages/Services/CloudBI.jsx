@@ -371,7 +371,7 @@ const Cloudbi = () =>
       <img
         src={CloudBI_5}
         alt="Data Mining"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
