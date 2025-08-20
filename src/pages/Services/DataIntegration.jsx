@@ -104,10 +104,7 @@ const DataIntegration = () =>
        Data Integration and Warehousing
               </h3>
               <p className="mb-0 mt-3" style={{ fontSize: '16px', lineHeight: '1.6' }}>
-             Data integration and warehousing services involve combining data from different sources to create a unified view of the business and storing, managing, and analyzing it in a centralized repository. 
-             These services enable businesses to gain valuable insights from their data and make informed decisions.
-              Our company provides end-to-end data integration and warehousing services using the latest tools and technologies to ensure that your data is stored securely and can be easily accessed for analysis, reporting, and decision-making.
-
+            Data integration and warehousing combine data from different sources into a single, centralized view. This helps businesses gain valuable insights and make informed decisions. We provide complete data integration and warehousing services, using modern tools to keep your data secure and ready for analysis and reporting.
 
 
               </p>
@@ -218,7 +215,7 @@ const DataIntegration = () =>
       <img
         src={DataIntegr_1}
         alt="Data analysis"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -296,7 +293,7 @@ const DataIntegration = () =>
       <img
         src={DataIntegr_3}
         alt="advance"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -476,3 +473,4 @@ const DataIntegration = () =>
 };
 
 export default DataIntegration;
+
