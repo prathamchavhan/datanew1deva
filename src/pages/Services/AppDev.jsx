@@ -105,13 +105,7 @@ const Application= () =>
                Application Development
               </h3>
               <p className="mb-0 mt-3" style={{ fontSize: '17px', lineHeight: '1.6' }}>
-              Our company provides top-notch application development services to clients looking to enhance their digital presence.
-               We offer customized solutions tailored to the specific needs and goals of each client, including web, mobile, and desktop 
-               application development. Our team of experienced developers uses the latest tools and technologies to develop high-performance, 
-               scalable, and user-friendly applications that meet your requirements. 
-
-
-
+        We offer professional application development services to help you boost your digital presence. Our team creates customized web, mobile, and desktop applications designed to meet your specific goals. Using the latest tools and technologies, we build high-performance, user-friendly, and scalable solutions that fit your business needs.
               </p>
             </div>
           </div>
@@ -214,7 +208,7 @@ const Application= () =>
       <img
         src={AppDev_1}
         alt="Data Mining"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -291,7 +285,7 @@ const Application= () =>
       <img
         src={AppDev_3}
         alt="Devlopment"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -369,7 +363,7 @@ const Application= () =>
       <img
         src={AppDev_5}
         alt="Deployment"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '280px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -468,3 +462,4 @@ const Application= () =>
 };
 
 export default Application;
+
