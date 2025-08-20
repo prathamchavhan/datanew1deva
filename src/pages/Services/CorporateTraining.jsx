@@ -213,7 +213,7 @@ const CorpTraining = () =>
       <img
         src={CorpTraining_1}
         alt="Data Mining"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -290,7 +290,7 @@ const CorpTraining = () =>
       <img
         src={CorpTraining_3}
         alt="brain strom"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -350,7 +350,7 @@ const CorpTraining = () =>
     <img
       src= {CorpTraining_4}
       alt="Data Mining"
-      style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+      style={{ width: '250px', height: '300px', objectFit: 'contain' }}
       className="img-fluid"
     />
   </div>
@@ -369,7 +369,7 @@ const CorpTraining = () =>
       <img
         src={CorpTraining_5}
         alt="launch"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '280px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -423,7 +423,7 @@ const CorpTraining = () =>
 
   {/* Right Side - Image */}
    <div className="slide-right" style={{ flexShrink: 0 }}>
-  <div style={{ width: '300px', flexShrink: 0 }}>
+  <div style={{ width: '260px', flexShrink: 0 }}>
     <img
       src={CorpTraining_6}
       alt="Data Mining"
