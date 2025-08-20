@@ -220,7 +220,7 @@ const DataAnalysis = () =>
       <img
         src={DataAnalysis_1}
         alt="Data analysis"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -293,7 +293,7 @@ const DataAnalysis = () =>
 <div className="container d-flex align-items-center gap-4">
     {/* Left Side - Image */}
      <div className="slide-left">
-    <div style={{ width: '300px', flexShrink: 0 }}>
+    <div style={{ width: '280px', flexShrink: 0 }}>
       <img
         src={DataAnalysis_3}
         alt="Data Mining"
@@ -357,7 +357,7 @@ const DataAnalysis = () =>
     <img
       src={DataAnalysis_4}
       alt="dataanalysis"
-      style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+      style={{ width: '260px', height: '300px', objectFit: 'contain' }}
       className="img-fluid"
     />
   </div>
@@ -376,7 +376,7 @@ const DataAnalysis = () =>
       <img
         src={DataAnalysis_5}
         alt="Data Mining"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -434,7 +434,7 @@ const DataAnalysis = () =>
     <img
       src={DataAnalysis_6}
       alt="Data refresh"
-      style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+      style={{ width: '260px', height: '300px', objectFit: 'contain' }}
       className="img-fluid"
     />
   </div>
@@ -451,7 +451,7 @@ const DataAnalysis = () =>
       <img
         src={DataAnalysis_7}
         alt="Data Mining"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '280px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -532,7 +532,7 @@ No upfront costs
       <img
         src={DataAnalysis_9}
         alt="Data Mining"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '280px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -592,7 +592,7 @@ No upfront costs
     <img
       src={DataAnalysis_10}
       alt="continious"
-      style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+      style={{ width: '260px', height: '300px', objectFit: 'contain' }}
       className="img-fluid"
     />
   </div>
@@ -680,3 +680,4 @@ No upfront costs
 };
 
 export default DataAnalysis;
+
