@@ -28,14 +28,16 @@ body {
 
 .footer-logo {
   width: 150px;
+  height: 40px;
   margin-bottom: 20px;
 }
-
+.footer-links {
+  padding-left: 0; /* This removes the default left padding of the list */
+}
 .footer-links li {
   list-style: none;
   margin: 8px 0;
 }
-
 .footer-links a {
   color: white;
   text-decoration: underline;
@@ -43,7 +45,6 @@ body {
   outline: none;
   border: none;
 }
-
 .footer-links a:focus,
 .footer-links a:active {
   outline: none;
@@ -116,30 +117,104 @@ body {
   margin-top: 20px;
   color: #00FFFF;
   font-size: 14px;
+}/* ... (Your original desktop styles) ... */
+/* ... (Your original desktop styles) ... */
+/* Tablets (landscape) and smaller laptops */
+@media (max-width: 1024px) {
+  .footer-container {
+    padding: 2rem; /* Slightly reduce padding */
+  }
+  .footer-content {
+    gap: 1.5rem; /* Slightly reduce gap */
+  }
+  .footer-section {
+    min-width: 180px; /* Adjust min-width for sections */
+  }
 }
 
+/* Tablets (portrait) and large phones */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+    /* Center the stacked sections horizontally within the footer-container */
+    align-items: center; 
+    text-align: center; /* Center text within the main footer content area */
+    gap: 20px; /* Adjust gap for stacked items */
+  }
+
+  .footer-section {
+    width: 90%; /* Give sections a bit more width to fill space */
+    max-width: 400px; /* Optional: limit max width for very large screens in portrait mode */
+    margin: 10px auto; /* Center sections when they stack */
+    text-align: center; /* Center text within each section */
   }
 
   .contact-section {
+    /* Ensure items within contact section are centered when stacked */
     align-items: center;
     text-align: center;
   }
 
   .contact-section p {
-    justify-content: center;
-    gap: 4px; /* space between icon and text */
-    margin: 4px 0; /* less space between lines */
+    /* For paragraphs containing icons, use flex to center them if desired */
+    display: flex; /* Make it a flex container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    gap: 8px; /* Increase gap between icon and text */
+    margin: 4px 0;
   }
 
   .email-link {
+    /* Ensure email link also centers itself */
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center its content */
+  }
+
+  .social-icons {
+    text-align: center; /* Center social icons */
+    padding-top: 10px; /* Add some space above icons */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 1.2rem; /* Further reduce padding */
+  }
+  .footer-logo {
+    width: 100px; /* Smaller logo */
+  }
+  .footer-links a,
+  .contact-section p,
+  .contact-item,
+  .email-link,
+  .footer-bottom {
+    font-size: 0.75rem; /* Slightly smaller font for better fit */
+  }
+  .social-icons a {
+    font-size: 0.9rem; /* Slightly smaller icons */
+    margin-right: 0.6rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 320px) {
+  .footer-container {
+    padding: 0.8rem; /* Minimal padding */
+  }
+  .footer-logo {
+    width: 80px; /* Even smaller logo */
+  }
+  .footer-links a,
+  .contact-section p,
+  .contact-item,
+  .email-link,
+  .footer-bottom {
+    font-size: 0.65rem; /* Smallest font size */
+  }
+  .social-icons a {
+    font-size: 0.8rem; /* Smallest icons */
+    margin-right: 0.4rem;
   }
 }
