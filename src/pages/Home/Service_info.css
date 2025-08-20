@@ -13,7 +13,7 @@
   position: relative;
   width: 1340px;
   border: 1px solid white;
-  border-radius: 15px;   
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   background: #504a4a1a;
@@ -38,14 +38,16 @@
 }
 
 .vertical-divider {
-  position: absolute;
+  position: absolute; /* Corrected: 'flex' is not a valid value for 'position' */
   top: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(calc(-50%)); /* moves 140px further left from center */
+  /* Adjusted left position to align with the start of the *first card column* */
+  /* Calculation: container-padding-left (2rem) + visual-width (450px) + content-gap (2rem) + our-services-cards-padding-left (13.5rem) */
+  left: calc(2rem + 450px + 2rem + 13.5rem);
   width: 2px;
   background-color: rgba(255,255,255,0.95);
   z-index: 50;
+  /* Removed transform: translateX because 'left' is now precisely calculated */
 }
 
 .our-services-content {
@@ -55,11 +57,10 @@
   z-index: 1;
 }
 
-
 .our-services-visual {
   position: relative;
-  width: 480px;
-  max-height: 1268px;
+  width: 490px;
+  max-height: 1500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,9 +80,9 @@
 .our-services-cards {
   display: flex;
   gap: 3rem;
-   margin-bottom: 4rem; 
+  margin-bottom: 4rem;
   flex: 1;
-  padding-left: 13.5rem;
+  padding-left: 13.5rem; /* This padding is retained to match the image's spacing */
   justify-content: flex-end;
 }
 
@@ -110,8 +111,8 @@
   border: 1px solid rgba(0, 255, 255, 0.25);
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
- margin-bottom: 7rem; 
-    display: flex;
+  margin-bottom: 7rem;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end; /* push text & button down */
   align-items: center;
@@ -119,6 +120,7 @@
 .our-services-card:last-child {
   margin-bottom: 0; /* avoid extra space after last card */
 }
+
 .our-services-card:hover {
   transform: scale(1.02);
   box-shadow: 0 0 35px rgba(0, 255, 255, 0.5);
@@ -161,6 +163,7 @@
   color: #ccc;
   line-height: 1.4;
 }
+
 .more-info-btn {
   background-color: transparent; /* red like Figma */
   color: rgb(255, 255, 255);
@@ -179,120 +182,198 @@
   box-shadow: 0px 4px 10px rgba(255, 123, 123, 0.4);
 }
 
+/* Redundant rule, consolidating with the main .our-services-card */
+/*
 .our-services-card {
   background: rgba(0, 0, 0, 0.6);
   padding: 16px;
   border-radius: 12px;
- 
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+*/
 
+/* Redundant rule, consolidating with the main .our-services-card:hover */
+/*
 .our-services-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.5);
 }
-/* Existing styles remain exactly as you gave */
+*/
 
-/* Mobile Responsiveness */
+/* Laptops & smaller desktops */
+@media (max-width: 1280px) {
+  .our-services-page {
+    padding: 6rem 4rem;
+  }
+  .our-services-cards {
+    padding-left: 6rem;
+  }
+}
+
+/* Tablets landscape */
 @media (max-width: 1024px) {
+  .our-services-page {
+    padding: 3rem 2rem;
+  }
   .our-services-container {
     flex-direction: column;
     align-items: center;
-    width: 100%;
     padding: 1.5rem;
   }
-
   .our-services-content {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
   }
-
   .our-services-visual {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     height: auto;
   }
-
   .our-services-cards {
     padding-left: 0;
     gap: 2rem;
     justify-content: center;
   }
-
   .vertical-divider {
-    display: none;
+    display: none; /* Hide divider on smaller screens */
+  }
+  .card-column {
+    flex-direction: column;
+    gap: 3rem;
+    transform: translateY(0) !important;
   }
 }
+/* ... (Your original code for larger screens) ... */
 
+/* Tablets portrait and below (including 720px) */
 @media (max-width: 768px) {
   .our-services-page {
-    padding: 5rem 1rem;
+    padding: 4rem 1rem;
   }
-
   .our-services-visual {
-    width: 100%;
-    max-width: 400px;
+    max-width: 500px;
+    max-height: 300px;
   }
-
   .our-services-cards {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
   }
-
-  .card-column {
-    flex-direction: column;
-    gap: 2rem;
-    transform: translateY(0) !important;
-  }
-
   .our-services-card {
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    max-width: 320px;
+    margin-bottom: 3rem;
+    padding-top: 1.5rem;
   }
-
   .card-icon {
-    top: -30px;
+    top: -15px;
     width: 60px;
     height: 60px;
   }
-}
-
-@media (max-width: 1024px) {
-  .our-services-page {
-    padding: 3rem 1.5rem 3.125rem 1.5rem; /* bottom stays 50px */
+  .industry-title {
+    margin-top: 0.5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .our-services-page {
-    padding: 5rem 1rem 3.125rem 1rem; /* bottom = 50px */
-  }
-}
-
+/* Phones (including 480px) */
 @media (max-width: 480px) {
-.our-services-page {
-    padding: 4rem 1rem 3.125rem 1rem;
+  .our-services-page {
+    padding: 3rem 1rem;
   }
-
   .our-services-card {
     max-width: 100%;
-    padding: 2.5rem 1rem 1rem;
+    padding: 1.5rem 1rem 1rem;
   }
-
+  .card-icon {
+    top: -10px;
+  }
   .industry-title {
+    margin-top: 0.4rem;
     font-size: 1rem;
   }
-
   .industry-description {
     font-size: 0.8rem;
   }
+  .more-info-btn {
+    font-size: 14px; /* Corrected to a standard button font size */
+    padding: 8px 16px; /* Corrected to standard button padding */
+  }
+  .our-services-visual {
+    max-width: 320px;
+    max-height: 180px;
+  }
+}
 
+/* Small phones (including 412px and 360px) */
+@media (max-width: 412px) { /* This breakpoint now specifically targets 412px and below, including 360px */
+  .our-services-page {
+    padding: 3rem 0.5rem; /* Reduced padding for tighter fit */
+  }
+  .our-services-card {
+    padding-top: 1rem; /* Adjusted for icon visibility */
+    padding-bottom: 1rem;
+  }
+  .card-icon {
+    top: -20px; /* Adjusted to pull the icon up and ensure visibility */
+  }
+  .industry-title {
+    margin-top: 0.3rem; /* Small margin */
+    font-size: 0.95rem; /* Reduced font size for readability */
+  }
+  .industry-description {
+    font-size: 0.75rem; /* Reduced font size for readability */
+  }
+  .more-info-btn {
+    font-size: 13px; /* Slightly smaller button font */
+    padding: 7px 14px; /* Slightly smaller button padding */
+  }
+  .our-services-visual {
+    max-width: 280px; /* Further reduced width */
+    max-height: 160px; /* Further reduced height */
+  }
+}
+
+@media (max-width: 360px) {
+  .our-services-page {
+    padding: 2.5rem 0.25rem; /* Even smaller padding for 360px */
+  }
+  .our-services-visual {
+    max-width: 250px; /* Fine-tuned for 360px */
+    max-height: 140px; /* Fine-tuned for 360px */
+  }
+  .our-services-card {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+  .card-icon {
+    top: -18px;
+  }
+  .industry-title {
+    font-size: 0.9rem;
+  }
+  .industry-description {
+    font-size: 0.7rem;
+  }
   .more-info-btn {
     font-size: 12px;
     padding: 6px 12px;
   }
 }
+
+/* Landscape orientation fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+  .our-services-page {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .backgroundVideo {
+    object-fit: cover;
+  }
+}
+
