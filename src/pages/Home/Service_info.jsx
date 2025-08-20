@@ -20,7 +20,7 @@ const industries = [
   {
     title: "Cloud-based Solutions",
     description:
-      "Enable businesses to access and analyze their data from anywhere, anytime, and make informed decisions quickly and effectively.",
+      "Empower businesses to manage and analyze their data seamlessly from anywhere, at any time, enabling them to make informed decisions faster and more accurately.",
     image: Service_main_1,
     link: "/Services/Cloudbi",
   },
@@ -34,7 +34,7 @@ const industries = [
   {
     title: "Data Integration and Warehousing",
     description:
-      "Help businesses to streamline their data management processes, improve data quality and accessibility, and gain valuable insights to enhance their overall performance.",
+      "We help businesses manage their data, improve its quality, and gain valuable insights to boost their performance & their busniess",
     image: Service_main_3,
     link: "/Services/DataIntegration",
   },
@@ -55,7 +55,7 @@ const industries = [
   {
     title: "Application Development",
     description:
-      "Provide customized and scalable software solutions that enable businesses to optimize their processes, enhance customer experiences, and achieve their digital transformation goals.",
+      "We build custom software to help businesses optimize processes, improve customer experiences, and achieve digital goals.",
     image: Service_main_6,
     link: "/Services/AppDev",
   },
