@@ -211,7 +211,7 @@ What is Data Management and Governance ?
       <img
         src={DataMngmt_1}
         alt="Data Mining"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -290,7 +290,7 @@ What is Data Management and Governance ?
       <img
         src={DataMngmt_3}
         alt="Standardize"
-        style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+        style={{ width: '260px', height: '300px', objectFit: 'contain' }}
         className="img-fluid"
       />
     </div>
@@ -352,7 +352,7 @@ Standardize
     <img
       src={DataMngmt_4}
       alt="Data Mining"
-      style={{ width: '300px', height: '300px', objectFit: 'contain' }}
+      style={{ width: '250px', height: '300px', objectFit: 'contain' }}
       className="img-fluid"
     />
   </div>
