@@ -58,14 +58,131 @@
   }
 }
 
-/* Mobile Responsive - Keep same layout, just scale */
 @media (max-width: 768px) {
+  /* Make all flex containers wrap on smaller screens */
+  .d-flex {
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+
+  /* Adjust the size and spacing of the tool icons */
+  .d-flex.justify-content-center.align-items-center.gap-5 {
+    gap: 1rem !important;
+    flex-direction: row !important; /* Keep tools in rows, but allow wrap */
+    flex-wrap: wrap;
+  }
+
+  .d-flex.justify-content-center.align-items-center.gap-5 img {
+    width: 20% !important; /* Make tool images take up a percentage of the width */
+    height: auto;
+  }
+}
+
+
+/* Styles for screens up to 480px wide (includes 480px, 360px, and smaller) */
+@media (max-width: 480px) {
   .cloudbi-page .container.py-5 {
-    padding: 2rem 1rem !important;
+    padding: 1.5rem 0.5rem !important; /* Further adjust container padding for smaller screens */
+  }
+
+  .cloudbi-page h2 {
+    font-size: 1.3rem !important; /* Further scale down heading 2 font size */
+  }
+
+  .cloudbi-page h3 {
+    font-size: 1.1rem !important; /* Further scale down heading 3 font size */
+  }
+
+  .cloudbi-page p {
+    font-size: 0.8rem !important; /* Further scale down paragraph font size */
+  }
+
+  .cloudbi-page .p-4 {
+    padding: 1rem !important; /* Further adjust padding */
+  }
+
+  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 img {
+    width: 60px !important; /* Further reduce image width */
+  }
+
+  .cloudbi-page .container.d-flex.align-items-center.gap-4 {
+    gap: 1.5rem !important; /* Further reduce gap */
+  }
+}
+@media (max-width: 576px) {
+  /* Stack the main content sections vertically */
+  .cloudbi-page .container.d-flex.align-items-center.gap-4 {
+    flex-direction: column;
+    text-align: center; /* Center align text when stacked */
+  }
+
+  /* Reverse the order of the items in alternating sections */
+  .cloudbi-page .container.d-flex.align-items-center.gap-4:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  /* Adjust spacing between the stacked items */
+  .cloudbi-page .container.d-flex.align-items-center.gap-4 > div {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  /* Make sure images don't overflow */
+  .cloudbi-page img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Further scale down font sizes for a better fit */
+  .cloudbi-page h2 {
+    font-size: 1.2rem !important;
+  }
+
+  .cloudbi-page p {
+    font-size: 0.9rem !important;
+  }
+}
+/* --- General Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .cloudbi-page .hero-text-box,
+  .cloudbi-page .what-is-bi-section {
+    padding: 2rem !important;
+  }
+
+  .cloudbi-page h2 {
+    font-size: 1.8rem !important;
+    margin-left: 2rem !important;
+  }
+}
+
+/* --- Tablet and Mobile Layout (≤ 768px) --- */
+@media (max-width: 768px) {
+  .cloudbi-page .row.align-items-center {
+    flex-direction: column;
+  }
+
+  .cloudbi-page .col-md-5.mb-4.mb-md-0.me-4 {
+    margin-right: 0 !important;
+  }
+
+  .cloudbi-page .what-is-bi-section .col-md-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .cloudbi-page .what-is-bi-section .border-end {
+    border-right: none !important;
+    border-bottom: 2px solid #fff;
+  }
+
+  .cloudbi-page .what-is-bi-section video {
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .cloudbi-page h2 {
     font-size: 1.5rem !important;
+    margin-left: 1rem !important;
   }
 
   .cloudbi-page h3 {
@@ -73,38 +190,50 @@
   }
 
   .cloudbi-page p {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
   }
 
-  .cloudbi-page .p-4 {
-    padding: 1.5rem !important;
-  }
-
-  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 {
-    gap: 1rem !important;
-  }
-
-  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 img {
-    width: 80px !important;
-    height: auto;
-  }
-
+  /* Stack benefits sections vertically */
   .cloudbi-page .container.d-flex.align-items-center.gap-4 {
+    flex-direction: column;
+    text-align: center;
     gap: 2rem !important;
   }
 
-  .cloudbi-page .container.d-flex.align-items-center.gap-4.py-5 {
-    padding: 1.5rem 0 !important;
+  .cloudbi-page .slide-right,
+  .cloudbi-page .slide-left {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .cloudbi-page .slide-left img,
+  .cloudbi-page .slide-right img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust tool images */
+  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 {
+    gap: 1rem !important;
+    flex-wrap: wrap;
+    justify-content: space-around !important;
+  }
+
+  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 img {
+    width: 25% !important;
+    height: auto;
   }
 }
 
+/* --- Small Mobile Phones (≤ 480px) --- */
 @media (max-width: 480px) {
   .cloudbi-page .container.py-5 {
-    padding: 1.5rem 0.5rem !important;
+    padding: 1rem !important;
   }
 
   .cloudbi-page h2 {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
+    margin-left: 0.5rem !important;
   }
 
   .cloudbi-page h3 {
@@ -112,95 +241,10 @@
   }
 
   .cloudbi-page p {
-    font-size: 0.8rem !important;
-  }
-
-  .cloudbi-page .p-4 {
-    padding: 1rem !important;
-  }
-
-  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 img {
-    width: 60px !important;
-  }
-
-  .cloudbi-page .container.d-flex.align-items-center.gap-4 {
-    gap: 1.5rem !important;
-  }
-}
-/* 📱 Responsive Styles */
-
-/* For max-width 460px */
-@media (max-width: 460px) {
-  .cloudbi-page h2,
-  .cloudbi-page h3 {
-    font-size: 1.4rem !important;
-    text-align: center;
-  }
-
-  .cloudbi-page p {
-    font-size: 1rem !important;
-    text-align: center;
-  }
-
-  .cloudbi-page video,
-  .cloudbi-page img {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .cloudbi-page .row,
-  .cloudbi-page .container.d-flex {
-    flex-direction: column !important;
-    text-align: center !important;
-  }
-
-  .cloudbi-page .slide-left,
-  .cloudbi-page .slide-right {
-    margin: 0 auto !important;
-  }
-
-  .cloudbi-page .gap-4,
-  .cloudbi-page .gap-5 {
-    gap: 1rem !important;
-    flex-wrap: wrap;
-  }
-
-  .cloudbi-page .tools-section img {
-    width: 70px !important;
-  }
-}
-
-/* For max-width 360px */
-@media (max-width: 360px) {
-  .cloudbi-page h2,
-  .cloudbi-page h3 {
-    font-size: 1.2rem !important;
-  }
-
-  .cloudbi-page p {
     font-size: 0.9rem !important;
   }
 
-  .cloudbi-page img {
-    max-width: 90% !important;
-    height: auto !important;
-  }
-
-  .cloudbi-page video {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .cloudbi-page .gap-4,
-  .cloudbi-page .gap-5 {
-    gap: 0.5rem !important;
-  }
-
-  .cloudbi-page .tools-section img {
-    width: 60px !important;
-  }
-
-  .cloudbi-page .container.d-flex {
-    flex-direction: column !important;
+  .cloudbi-page .d-flex.justify-content-center.align-items-center.gap-5 img {
+    width: 20% !important;
   }
 }
