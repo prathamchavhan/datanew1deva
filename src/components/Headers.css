@@ -5,16 +5,16 @@
   justify-content: space-between;
   background: #ffffff;
   padding: 15px 30px;
-  position: fixed; /* fixed header */
-  width: 100%;
-  top: 0;
-  z-index: 100;
-  transition: transform 0.3s ease-in-out;
+  position: fixed; /* Make it fixed so it stays at the top */
+  width: 100%; /* Take full width */
+  top: 0; /* Align to top */
+  z-index: 100; /* Ensure it's above other content */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
   flex-wrap: wrap;
 }
 
 .main-header.hidden {
-  transform: translateY(-100%);
+  transform: translateY(-100%); /* Move header completely out of view */
 }
 
 .logo-box img.logo {
@@ -30,6 +30,7 @@
   transition: all 0.3s ease;
 }
 
+/* ========== NAVIGATION ========== */
 .nav-links {
   display: flex;
   align-items: center;
@@ -37,8 +38,14 @@
   list-style: none;
   margin-top: 0;
   padding-top: 0;
+
+}
+
+.nav-links{
   padding-right: 20px;
   padding-top: 10px;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -51,7 +58,7 @@
   transition: all 0.3s ease;
 }
 
-/* Hover & Active Effects */
+/* ========== HOVER & ACTIVE EFFECTS ========== */
 .nav-links li a:hover,
 .services-btn:hover {
   background-color: #0cfae3;
@@ -59,13 +66,14 @@
   box-shadow: 0 2px 8px rgba(0, 188, 235, 0.2);
   text-decoration: none;
 }
+
 .nav-links li a:active,
 .services-btn:active {
   transform: scale(0.96);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* Services Button */
+/* ========== SERVICES BUTTON ========== */
 .services-btn {
   background: none;
   border: none;
@@ -78,10 +86,11 @@
   transition: all 0.3s ease;
 }
 
-/* Dropdown */
+/* ========== DROPDOWN ========== */
 .dropdown-container {
   position: relative;
 }
+
 .services-dropdown {
   position: absolute;
   background: linear-gradient(90deg, #29F1E5 0%, #00BCEB 100%);
@@ -91,22 +100,27 @@
   list-style: none;
   z-index: 100;
   width: 360px;
+  
 }
+
 .services-dropdown li {
   margin-bottom: 2px;
 }
+
 .services-dropdown li a {
   text-decoration: none;
   color: #000;
   font-weight: 500;
   transition: 0.3s;
 }
+
 .services-dropdown li a:hover {
+  color: none;
   background: none;
   box-shadow: none;
 }
 
-/* Learn Button */
+/* ========== LEARN BUTTON ========== */
 .learn-btn {
   margin-left: 20px;
   background: linear-gradient(90deg, #29F1E5, #00BCEB);
@@ -114,12 +128,13 @@
   border-radius: 8px;
   transition: 0.3s ease;
 }
+
 .learn-btn a {
   text-decoration: none;
   color: #000000;
 }
 
-/* Burger Menu */
+/* ========== BURGER MENU ========== */
 .burger {
   display: none;
   flex-direction: column;
@@ -129,6 +144,7 @@
   cursor: pointer;
   z-index: 11;
 }
+
 .burger span {
   width: 100%;
   height: 3px;
@@ -136,6 +152,7 @@
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 .burger.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -145,8 +162,6 @@
 .burger.open span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
-
-/* ========== RESPONSIVE STYLES ========== */
 
 /* Tablets ≤ 768px */
 @media (max-width: 768px) {
@@ -176,6 +191,16 @@
   .burger {
     display: flex;
   }
+  .services-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350%; /* Increased width for a wider look */
+    text-align: center;
+    padding: 10px 0;
+  }
+  .services-dropdown li a {
+    padding: 10px 0; /* Add padding for better spacing */
+  }
 }
 
 /* Phones ≤ 460px */
@@ -199,6 +224,11 @@
   .learn-btn {
     padding: 6px 14px;
     font-size: 14px;
+  }
+  .services-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350%; /* Increased for better fit on phones */
   }
 }
 
@@ -228,6 +258,9 @@
   .burger span {
     height: 2px;
   }
+  .services-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350%; /* Full width for very small screens */
+  }
 }
-
-
