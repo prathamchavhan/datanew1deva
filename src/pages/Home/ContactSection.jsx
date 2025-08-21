@@ -18,7 +18,7 @@ const getResponsiveStyles = (
   styles.containerStyle = {
     position: 'relative',
     zIndex: 10,
-    maxWidth: '1268px',
+    maxWidth: '1270px',
     margin: '0 auto',
     padding: '48px 24px',
   };
@@ -132,7 +132,7 @@ const getResponsiveStyles = (
       background: 'rgba(57, 59, 62, 0.3)',
       backdropFilter: 'blur(16px)',
       borderRadius: '16px',
-      padding: '24px 40px',
+        padding: '24px 40px 10px 20px',
       border: '1px #ffffff solid',
       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -140,25 +140,26 @@ const getResponsiveStyles = (
       opacity: formVisible ? 1 : 0,
       transform: formVisible ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.95)',
       maxWidth: '900px',
+          minHeight: '630px',
       alignItems: 'center',
       margin: '0 auto',
     },
     form: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '40px',
+      gap: '69px',
       fontFamily: 'Poppins, sans-serif',
       position: 'relative',
-      paddingTop: '32px',
-      paddingLeft: '50px',
+      paddingTop: '27px',
+      paddingLeft: '10px',
     },
     grid: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
-      gap: '50px',
+      gap: '80px',
     },
     submitButton: {
-      width: '80%',
+      width: '100%',
       padding: '16px 24px',
       background: 'transparent',
       color: isHovering ? 'white' : '#22d3ee',
@@ -357,6 +358,7 @@ const AnimatedInput = ({ label, type = 'text', value, onChange, placeholder }) =
   const { animatedInput } = getResponsiveStyles(window.innerWidth, isFocused, value);
 
   return (
+    
     <div style={animatedInput.container}>
       <label style={animatedInput.label}>{label}</label>
       <input
@@ -450,7 +452,7 @@ export default function AdvancedLandingPage() {
     lastName: '',
     email: '',
     company: '',
-    phone: '+1',
+    phone: '+91',
     jobTitle: '',
   });
   const [phoneNumber, setPhoneNumber] = useState('');
