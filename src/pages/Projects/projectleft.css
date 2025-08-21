@@ -264,6 +264,7 @@
 /* Responsive Styles          */
 /* ================================== */
 
+/* Tablets & Small Laptops */
 @media (max-width: 1200px) {
   /* --- HOVER EFFECTS DISABLED FOR RESPONSIVE --- */
   .main-box:hover .tagline::after,
@@ -341,6 +342,7 @@
   }
 }
 
+/* Small Tablets */
 @media (max-width: 800px) {
   /* Dashboard */
   .dashboard-container {
@@ -419,6 +421,14 @@
   }
 }
 
+/* Large Phones */
+@media (max-width: 720px) {
+  .image-box, .projRight-imageBox {
+    top: -25px; /* Reduce upward overlap */
+  }
+}
+
+/* Standard Phones */
 @media (max-width: 500px) {
   .tagline,
   .projRight-tagline {
@@ -427,5 +437,45 @@
   .dashboard-desc,
   .projRight-desc {
     font-size: 0.95rem;
+  }
+  .image-box, .projRight-imageBox {
+    top: -22px;
+  }
+}
+
+/* Medium Phones (e.g., Pixel 7, Galaxy S20 Ultra) */
+@media (max-width: 412px) {
+  .tagline,
+  .projRight-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .dashboard-desc,
+  .projRight-desc {
+    font-size: 0.9rem;
+  }
+  .image-box, .projRight-imageBox {
+    top: -20px;
+  }
+}
+
+/* Small Phones (e.g., iPhone SE) */
+@media (max-width: 360px) {
+  .main-box,
+  .projRight-mainBox {
+    padding: 0.8rem;
+  }
+  .tagline,
+  .projRight-tagline {
+    font-size: 1.1rem;
+  }
+  .dashboard-desc,
+  .projRight-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .image-box, .projRight-imageBox {
+    top: -15px;
+    border-width: 4px;
   }
 }
