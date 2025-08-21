@@ -1,266 +1,571 @@
-/* ========== GENERAL STYLING ========== */
+
 .main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #ffffff;
-  padding: 15px 30px;
-  position: fixed; /* Make it fixed so it stays at the top */
-  width: 100%; /* Take full width */
-  top: 0; /* Align to top */
-  z-index: 100; /* Ensure it's above other content */
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
-  flex-wrap: wrap;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+background: #ffffff;
+
+padding: 15px 30px;
+
+position: fixed; /* Make it fixed so it stays at the top */
+
+width: 100%; /* Take full width */
+
+top: 0; /* Align to top */
+
+z-index: 100; /* Ensure it's above other content */
+
+transition: transform 0.3s ease-in-out; /* Smooth transition */
+
+flex-wrap: wrap;
+
 }
+
+
 
 .main-header.hidden {
-  transform: translateY(-100%); /* Move header completely out of view */
+
+transform: translateY(-100%); /* Move header completely out of view */
+
 }
+
+
 
 .logo-box img.logo {
-  width: 250px;
+
+width: 250px;
+
 }
+
+
 
 .nav-wrapper {
-  background: #8d8e831a;
-  padding: 0px 5px;
-  justify-content: center;
-  border-radius: 30px;
-  border: 2px solid #29F1E5;
-  transition: all 0.3s ease;
+
+background: #8d8e831a;
+
+padding: 0px 5px;
+
+justify-content: center;
+
+border-radius: 30px;
+
+border: 2px solid #29F1E5;
+
+transition: all 0.3s ease;
+
 }
+
+
 
 /* ========== NAVIGATION ========== */
+
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-  margin-top: 0;
-  padding-top: 0;
+
+display: flex;
+
+align-items: center;
+
+gap: 2rem;
+
+list-style: none;
+
+margin-top: 0;
+
+padding-top: 0;
+
+
 
 }
+
+
 
 .nav-links{
-  padding-right: 20px;
-  padding-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+padding-right: 20px;
+
+padding-top: 10px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
 }
+
+
 
 .nav-links li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 400;
-  padding: 5px 14px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+
+text-decoration: none;
+
+color: #000;
+
+font-weight: 400;
+
+padding: 5px 14px;
+
+border-radius: 50px;
+
+transition: all 0.3s ease;
+
 }
+
+
 
 /* ========== HOVER & ACTIVE EFFECTS ========== */
+
 .nav-links li a:hover,
+
 .services-btn:hover {
-  background-color: #0cfae3;
-  color: #000;
-  box-shadow: 0 2px 8px rgba(0, 188, 235, 0.2);
-  text-decoration: none;
+
+background-color: #0cfae3;
+
+color: #000;
+
+box-shadow: 0 2px 8px rgba(0, 188, 235, 0.2);
+
+text-decoration: none;
+
 }
+
+
 
 .nav-links li a:active,
+
 .services-btn:active {
-  transform: scale(0.96);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+
+transform: scale(0.96);
+
+box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+
 }
+
+
 
 /* ========== SERVICES BUTTON ========== */
+
 .services-btn {
-  background: none;
-  border: none;
-  color: #000;
-  font-weight: 400;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 3px 14px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+
+background: none;
+
+border: none;
+
+color: #000;
+
+font-weight: 400;
+
+cursor: pointer;
+
+font-size: 16px;
+
+padding: 3px 14px;
+
+border-radius: 50px;
+
+transition: all 0.3s ease;
+
 }
 
+
+
 /* ========== DROPDOWN ========== */
+
 .dropdown-container {
-  position: relative;
+
+position: relative;
+
+}
+
+
+
+.services-dropdown {
+
+position: absolute;
+
+background: linear-gradient(90deg, #29F1E5 0%, #00BCEB 100%);
+
+padding: 14px 25px;
+
+border-radius: 16px;
+
+margin-top: 2px;
+
+list-style: none;
+
+z-index: 100;
+
+width: 360px;
+
+
+}
+
+
+
+.services-dropdown li {
+
+margin-bottom: 2px;
+
+}
+
+
+
+.services-dropdown li a {
+
+text-decoration: none;
+
+color: #000;
+
+font-weight: 500;
+
+transition: 0.3s;
+
+}
+
+
+
+.services-dropdown li a:hover {
+
+color: none;
+
+background: none;
+
+box-shadow: none;
+
+}
+
+
+
+/* ========== LEARN BUTTON ========== */
+
+.learn-btn {
+
+margin-left: 20px;
+
+background: linear-gradient(90deg, #29F1E5, #00BCEB);
+
+padding: 8px 20px;
+
+border-radius: 8px;
+
+transition: 0.3s ease;
+
+}
+
+
+
+.learn-btn a {
+
+text-decoration: none;
+
+color: #000000;
+
+}
+
+
+
+/* ========== BURGER MENU ========== */
+
+.burger {
+
+display: none;
+
+flex-direction: column;
+
+justify-content: space-between;
+
+width: 26px;
+
+height: 20px;
+
+cursor: pointer;
+
+z-index: 11;
+
+}
+
+
+
+.burger span {
+
+width: 100%;
+
+height: 3px;
+
+background: #29F1E5;
+
+border-radius: 2px;
+
+transition: transform 0.1s ease, opacity 0.1s ease;
+
+}
+
+
+
+.burger.open span:nth-child(1) {
+
+transform: translateY(8px) rotate(45deg);
+
+}
+
+.burger.open span:nth-child(2) {
+
+opacity: 0;
+
+}
+
+.burger.open span:nth-child(3) {
+
+transform: translateY(-8px) rotate(-45deg);
+
+}
+
+
+
+/* Tablets ≤ 768px */
+
+@media (max-width: 768px) {
+
+.nav-wrapper {
+
+position: absolute;
+
+top: 70px;
+
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 90%;
+
+text-align: center;
+
+display: none;
+
+flex-direction: column;
+
+background: #fff;
+
+z-index: 10;
+
+}
+
+.nav-wrapper.open {
+
+display: flex;
+
+}
+
+.nav-links {
+
+flex-direction: column;
+
+gap: 15px;
+
+padding: 20px 0;
+
+}
+
+.learn-btn {
+
+margin: 0;
+
+}
+
+.burger {
+
+display: flex;
+
 }
 
 .services-dropdown {
-  position: absolute;
-  background: linear-gradient(90deg, #29F1E5 0%, #00BCEB 100%);
-  padding: 14px 25px;
-  border-radius: 16px;
-  margin-top: 2px;
-  list-style: none;
-  z-index: 100;
-  width: 360px;
-  
-}
 
-.services-dropdown li {
-  margin-bottom: 2px;
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 350%; /* Increased width for a wider look */
+
+text-align: center;
+
+padding: 10px 0;
+
 }
 
 .services-dropdown li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  transition: 0.3s;
+
+padding: 10px 0; /* Add padding for better spacing */
+
 }
 
-.services-dropdown li a:hover {
-  color: none;
-  background: none;
-  box-shadow: none;
 }
 
-/* ========== LEARN BUTTON ========== */
+
+
+/* Phones ≤ 460px */
+
+@media (max-width: 460px) {
+
+.logo-box img.logo {
+
+width: 180px;
+
+}
+
+.main-header {
+
+padding: 10px 15px;
+
+}
+
+.nav-wrapper {
+
+width: 95%;
+
+}
+
+.nav-links {
+
+gap: 12px;
+
+}
+
+.nav-links li a {
+
+font-size: 14px;
+
+padding: 6px 12px;
+
+}
+
 .learn-btn {
-  margin-left: 20px;
-  background: linear-gradient(90deg, #29F1E5, #00BCEB);
-  padding: 8px 20px;
-  border-radius: 8px;
-  transition: 0.3s ease;
+
+padding: 6px 14px;
+
+font-size: 14px;
+
 }
 
-.learn-btn a {
-  text-decoration: none;
-  color: #000000;
+.services-dropdown {
+
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 350%; /* Increased for better fit on phones */
+
 }
 
-/* ========== BURGER MENU ========== */
+}
+
+
+
+/* Small phones ≤ 360px */
+
+@media (max-width: 360px) {
+
+.logo-box img.logo {
+
+width: 150px;
+
+}
+
+.main-header {
+
+padding: 8px 12px;
+
+}
+
+.nav-wrapper {
+
+width: 100%;
+
+}
+
+.nav-links li a {
+
+font-size: 13px;
+
+padding: 6px 10px;
+
+}
+
+.learn-btn {
+
+padding: 6px 12px;
+
+font-size: 13px;
+
+}
+
 .burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 26px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 11;
+
+width: 22px;
+
+height: 18px;
+
 }
 
 .burger span {
-  width: 100%;
-  height: 3px;
-  background: #29F1E5;
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+
+height: 2px;
+
 }
 
-.burger.open span:nth-child(1) {
+.services-dropdown {
+
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 350%; /* Full width for very small screens */
+
+}
+
+}
+/* Replace the .burger.open and .nav-wrapper.open rules 
+  in your CSS with these.
+*/
+
+/* Animate the burger icon when the hidden checkbox is checked */
+#menu-toggle:checked + .nav-wrapper + .burger span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
-.burger.open span:nth-child(2) {
+
+#menu-toggle:checked + .nav-wrapper + .burger span:nth-child(2) {
   opacity: 0;
 }
-.burger.open span:nth-child(3) {
+
+#menu-toggle:checked + .nav-wrapper + .burger span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Tablets ≤ 768px */
 @media (max-width: 768px) {
+  .burger {
+    display: flex; /* This should already be in your code */
+  }
+
   .nav-wrapper {
+    display: none; /* Keep the menu hidden by default */
+    /* Add the rest of your existing .nav-wrapper styles here */
     position: absolute;
     top: 70px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     text-align: center;
-    display: none;
     flex-direction: column;
     background: #fff;
     z-index: 10;
   }
-  .nav-wrapper.open {
-    display: flex;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px 0;
-  }
-  .learn-btn {
-    margin: 0;
-  }
-  .burger {
-    display: flex;
-  }
-  .services-dropdown {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 350%; /* Increased width for a wider look */
-    text-align: center;
-    padding: 10px 0;
-  }
-  .services-dropdown li a {
-    padding: 10px 0; /* Add padding for better spacing */
-  }
-}
 
-/* Phones ≤ 460px */
-@media (max-width: 460px) {
-  .logo-box img.logo {
-    width: 180px;
-  }
-  .main-header {
-    padding: 10px 15px;
-  }
-  .nav-wrapper {
-    width: 95%;
-  }
-  .nav-links {
-    gap: 12px;
-  }
-  .nav-links li a {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-  .learn-btn {
-    padding: 6px 14px;
-    font-size: 14px;
-  }
-  .services-dropdown {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 350%; /* Increased for better fit on phones */
-  }
-}
-
-/* Small phones ≤ 360px */
-@media (max-width: 360px) {
-  .logo-box img.logo {
-    width: 150px;
-  }
-  .main-header {
-    padding: 8px 12px;
-  }
-  .nav-wrapper {
-    width: 100%;
-  }
-  .nav-links li a {
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-  .learn-btn {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-  .burger {
-    width: 22px;
-    height: 18px;
-  }
-  .burger span {
-    height: 2px;
-  }
-  .services-dropdown {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 350%; /* Full width for very small screens */
+  /* Show the navigation menu when the hidden checkbox is checked */
+  #menu-toggle:checked + .nav-wrapper {
+    display: flex;
   }
 }
