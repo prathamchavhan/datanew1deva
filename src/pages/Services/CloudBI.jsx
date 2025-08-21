@@ -341,7 +341,7 @@ const Cloudbi = () =>
     </h2>
 
     <p className="mb-0" style={{ fontSize: '1.5rem', lineHeight: '1.6' }}>
-     Data structuring turns raw inputs into organized formats like tables or JSON, making analysis and decision-making easier
+     Data structuring turns raw inputs into organized formats like tables or JSON, making analysis and decision-making easier.
       
     </p>
   </div>
