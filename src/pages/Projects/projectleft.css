@@ -1,3 +1,7 @@
+/* ================================== */
+/* Original Styles           */
+/* ================================== */
+
 .underline-hover {
   position: relative;
   display: inline-block;
@@ -14,10 +18,15 @@
   transition: width 0.3s ease-in-out;
 }
 
+/* --- Hover Effect Active (Desktop) --- */
 .underline-hover:hover::after {
   width: 100%;
 }
 
+
+/* ================================== */
+/* Dashboard Component         */
+/* ================================== */
 
 .dashboard-container {
   position: relative;
@@ -118,6 +127,7 @@
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* --- Hover Effect Active (Desktop) --- */
 .main-box:hover .tagline::after {
   width: 500px;
   background: linear-gradient(89.81deg, #00BCEB 0.16%, #29F1E5 99.84%);
@@ -133,90 +143,12 @@
   letter-spacing: 0.01rem;
 }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .gradient-block, .main-box {
-    left: 3vw;
-    width: 95vw;
-    max-width: 99vw;
-  }
-  .gradient-block {
-    top: 32vw;
-  }
-  .main-box {
-    top: 14vw;
-    min-width: 0;
-  }
-  .main-content {
-    padding: 34px 6vw 36px 27vw;
-  }
-  .image-box {
-    left: 8vw;
-    top: 18vw;
-    width: 45vw;
-    min-width: 240px;
-    height: 26vw;
-    min-height: 150px;
-  }
-}
 
-@media (max-width: 800px) {
-  .dashboard-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .gradient-block {
-    left: 0;
-    width: 90vw;
-    min-width: 270px;
-    top: 58vw;
-  }
-  .main-box {
-    top: 21vw;
-    min-width: 0;
-    width: 99vw;
-    max-width: 99vw;
-  }
-  .main-content {
-    padding: 30px 2vw 22px 2vw;
-  }
-  .image-box {
-    position: static;
-    width: 90vw;
-    min-width: 160px;
-    height: 180px;
-    margin: 0 auto 22px auto;
-    left: 0;
-    top: 0;
-  }
-}
+/* ================================== */
+/* Project Right Component       */
+/* ================================== */
 
-@media (max-width: 500px) {
-  .gradient-block {
-    display: none;
-  }
-  .main-box {
-    min-width: 0;
-    border-radius: 22px;
-    padding: 0;
-  }
-  .main-content {
-    padding: 19px 3vw 14px 3vw;
-  }
-  .tagline {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-  .dashboard-desc {
-    font-size: 0.94rem;
-  }
-  .image-box {
-    width: 96vw;
-    height: 100px;
-    min-width: 80px;
-    border-radius: 12px;
-  }
-}.projRight-container {
+.projRight-container {
   position: relative;
   width: 100vw;
   min-height: 100vh;
@@ -226,7 +158,6 @@
   overflow-x: auto;
 }
 
-/* Blue Gradient Block - background layer */
 .projRight-gradient {
   position: absolute;
   width: 813px;
@@ -241,7 +172,6 @@
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Main structured white card */
 .projRight-mainBox {
   position: absolute;
   width: 950px;
@@ -277,8 +207,6 @@
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-
 
 .projRight-mainContent {
   width: 100%;
@@ -316,6 +244,7 @@
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* --- Hover Effect Active (Desktop) --- */
 .projRight-mainBox:hover .projRight-tagline::after {
   width: 425px;
   background: linear-gradient(89.81deg, #00BCEB 0.16%, #29F1E5 99.84%);
@@ -330,7 +259,25 @@
   letter-spacing: 0.01rem;
 }
 
+
+/* ================================== */
+/* Responsive Styles          */
+/* ================================== */
+
 @media (max-width: 1200px) {
+  /* --- HOVER EFFECTS DISABLED FOR RESPONSIVE --- */
+  .main-box:hover .tagline::after,
+  .projRight-mainBox:hover .projRight-tagline::after {
+      width: 60px; /* Resets width to original state */
+      background: linear-gradient(89.81deg, #29F1E5 0.16%, #00BCEB 99.84%);
+  }
+
+  .underline-hover:hover::after {
+      width: 0; /* Prevents underline from appearing on hover */
+  }
+  /* ------------------------------------------- */
+
+
   /* Dashboard */
   .gradient-block, .main-box {
     left: 3vw;
