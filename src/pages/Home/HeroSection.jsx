@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
-import { Link } from 'react-router-dom';
+// Link is not used, but kept as per your request not to change other things
+import { Link, useNavigate } from 'react-router-dom'; 
 import landingPageVideo from '../../assets/videos/landing page .mp4';
 
 import dashboard from '../../assets/images/dashboard.png';
@@ -14,6 +15,8 @@ import mission from '../../assets/images/mission.png';
 import vision from '../../assets/images/vision.png';
 import ethic from '../../assets/images/ethic.png';
 import DarkRectangle from '../../components/DarkRectangle';
+
+
 import { useState, useEffect } from 'react';
 
 const { div: MotionDiv, span: MotionSpan, button: MotionButton } = motion;
@@ -331,6 +334,7 @@ const infoCardStyle = {
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -390,13 +394,15 @@ const Hero = () => {
               flexWrap: 'wrap',
               justifyContent: isMobile ? 'center' : 'flex-start'
             }}>
-              <MotionButton 
-                className={styles.ctaButton}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Let's Connect
-              </MotionButton>
+<MotionButton
+  className={styles.ctaButton}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => navigate("/careers")}
+>
+  Let's Connect
+</MotionButton>
+
             </div>
           </MotionDiv>    
         </div>
