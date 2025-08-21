@@ -340,6 +340,10 @@
     aspect-ratio: 16 / 9;
     margin: 0 auto 1.5rem;
   }
+   .underline-hover:hover::after {
+      width: 0; /* Prevents underline from appearing on hover */
+  }
+
 }
 
 /* Small Tablets */
@@ -419,6 +423,10 @@
     padding: 1rem;
     text-align: center;
   }
+   .underline-hover:hover::after {
+      width: 0; /* Prevents underline from appearing on hover */
+  }
+
 }
 
 /* Large Phones */
@@ -426,6 +434,10 @@
   .image-box, .projRight-imageBox {
     top: -25px; /* Reduce upward overlap */
   }
+   .underline-hover:hover::after {
+      width: 0; /* Prevents underline from appearing on hover */
+  }
+
 }
 
 /* Standard Phones */
@@ -441,6 +453,10 @@
   .image-box, .projRight-imageBox {
     top: -22px;
   }
+   .underline-hover:hover::after {
+      width: 0; /* Prevents underline from appearing on hover */
+  }
+
 }
 
 /* Medium Phones (e.g., Pixel 7, Galaxy S20 Ultra) */
@@ -457,6 +473,10 @@
   .image-box, .projRight-imageBox {
     top: -20px;
   }
+   .underline-hover:hover::after {
+      width: 0; /* Prevents underline from appearing on hover */
+  }
+
 }
 
 /* Small Phones (e.g., iPhone SE) */
@@ -478,4 +498,8 @@
     top: -15px;
     border-width: 4px;
   }
+   .underline-hover:hover::after {
+      width: 0; /* Prevents underline from appearing on hover */
+  }
+
 }
