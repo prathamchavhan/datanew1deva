@@ -446,13 +446,12 @@ export default function Careers() {
           <p className={styles.heroDescription}>
             Find your fit and supercharge progress with our exciting career opportunities
           </p>
-          <p className ={styles.container} >Apply now </p>
         </div>
       </div>
 
       
-    <div>
-        <h2 className={styles.title}></h2>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Apply now</h2>
         <div 
           ref={formRef} 
           className={`${styles.formContainer} ${formVisible ? styles.formCardVisible : styles.formCardHidden}`}
@@ -559,18 +558,12 @@ export default function Careers() {
               />
             </div>
             
-            {/* MODIFIED PART: Added inline style to increase button height and match width */}
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}
               className={styles.submitButton}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
-              style={{
-                width: '100%',
-                paddingTop: '14px',
-                paddingBottom: '14px'
-              }}
             >
               <div style={{
                 position: 'absolute',
@@ -591,7 +584,7 @@ export default function Careers() {
                       height: '20px',
                       border: '2px solid rgba(255, 255, 255, 0.3)',
                       borderTop: '2px solid white',
-                      borderRadius: '40%',
+                      borderRadius: '50%',
                       animation: 'spin 1s linear infinite'
                     }}></div>
                     Submitting...
