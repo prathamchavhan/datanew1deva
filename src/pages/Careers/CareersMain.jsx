@@ -328,70 +328,63 @@ export default function Careers() {
       resume: file
     }));
   };
-  
   const handleSubmit = async () => {
-    setIsSubmitting(true);
-    try {
-      let resumeUrl = null;
-      if (formData.resume) {
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from('resumes')
-          .upload(`${formData.resume.name}`,
-            formData.resume,
-            {
-              cacheControl: '3600',
-              upsert: true
-            }
-          );
+  setIsSubmitting(true);
+  try {
+    let resumeUrl = null;
 
-        if (uploadError) {
-          throw uploadError;
-        }
+    if (formData.resume) {
+      const filePath = `resumes/${Date.now()}_${formData.resume.name}`;
 
-        const { data: urlData } = supabase.storage
-          .from('resumes')
-          .getPublicUrl(uploadData.path);
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('resumes')
+        .upload(filePath, formData.resume, { upsert: true });
 
-        resumeUrl = urlData.publicUrl;
-      }
+      if (uploadError) throw uploadError;
 
-      const snakeCaseData = {
-        full_name: formData.fullName,
-        email: formData.email,
-        phone_no: formData.phoneNo,
-        job_interested: formData.jobInterested,
-        experience_years: formData.experienceYears,
-        experience_months: formData.experienceMonths,
-        preferred_location: formData.preferredLocation,
-        resume_url: resumeUrl
-      };
+      const { data: urlData } = supabase.storage
+        .from('resumes')
+        .getPublicUrl(filePath);
 
-      const { data, error } = await supabase
-        .from('careers')
-        .insert([snakeCaseData]);
-
-      if (error) {
-        throw error;
-      }
-
-      alert('Application submitted successfully!');
-      setFormData({
-        fullName: '',
-        email: '',
-        phoneNo: '',
-        jobInterested: '',
-        experienceYears: '',
-        experienceMonths: '',
-        preferredLocation: '',
-        resume: null
-      });
-    } catch (error) {
-      console.error('Error submitting application:', error);
-      alert('Error submitting application. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+      resumeUrl = urlData.publicUrl;
     }
-  };
+
+    const snakeCaseData = {
+      full_name: formData.fullName,
+      email: formData.email,
+      phone_no: formData.phoneNo,
+      job_interested: formData.jobInterested,
+      experience_years: formData.experienceYears,
+      experience_months: formData.experienceMonths,
+      preferred_location: formData.preferredLocation,
+      resume_url: resumeUrl
+    };
+
+    const { data, error } = await supabase
+      .from('careers')
+      .insert([snakeCaseData]);
+
+    if (error) throw error;
+
+    alert('Application submitted successfully!');
+    setFormData({
+      fullName: '',
+      email: '',
+      phoneNo: '',
+      jobInterested: '',
+      experienceYears: '',
+      experienceMonths: '',
+      preferredLocation: '',
+      resume: null
+    });
+  } catch (error) {
+    console.error('Error submitting application:', error.message || error);
+    alert('Error submitting application. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const jobOptions = [
     { value: 'PowerBI-developer', label: 'Power BI Developer' },
