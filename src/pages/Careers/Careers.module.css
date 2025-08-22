@@ -12,23 +12,21 @@
 }
 
 .container {
-  font-size: 3rem;
-  font-weight: bold;
   max-width: 1000px;
-  margin: 80px auto 0;
+  margin: -80px auto 0;
   position: relative;
   z-index: 10;
   padding: 0 20px;
-  padding-bottom: 0px;
+  padding-bottom: 50px;
 }
 
 .title {
-  font-size: 48px;
+  font-size: 45px;
   font-weight: bold;
-  color: #ffffff;
+  color: #e4ee22;
   text-align: center;
   padding-bottom: 100px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-family: 'Poppins', sans-serif;
   text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
   
@@ -58,7 +56,6 @@
   transform: translateX(-50%);
 }
 
-
 .heroOverlay {
   position: absolute;
   top: 0;
@@ -79,7 +76,6 @@
   font-size: 3rem;
   font-weight: bold;
   color: white;
-  margin-top: 9rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -95,8 +91,8 @@
   font-size: 1.2rem;
   color: white;
   max-width: 600px;
-  margin-top: 0rem;
-  margin-bottom: 5rem;
+  margin-top: 1rem;
+  
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -196,7 +192,7 @@
     transform: scale(1.1);
   }
 }
-media
+
 .submitButton {
   width: 80%;
   padding: 16px 24px;
@@ -223,63 +219,3 @@ media
 }
 
 
-/* Hero video section */
-.heroSection {
-  position: relative;
-  width: 100%;
-  height: 70vh;
-  margin-bottom: 40px;
-}
-
-.heroVideo {
-  width: 100vw;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@media (max-width: 480px){
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  z-index: 1;
-}
-
-.heroTitle {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  margin-top: 15rem;
-  margin-bottom: 0.1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.heroSubtitle {
-  font-size: 1.5rem;
-  color: white;
-  max-width: 800px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.heroDescription {
-  font-size: 1.2rem;
-  color: white;
-  max-width: 600px;
-  margin-top: 0rem;
-  margin-bottom: 0.3rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-}
