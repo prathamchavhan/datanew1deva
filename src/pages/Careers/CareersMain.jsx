@@ -439,12 +439,13 @@ export default function Careers() {
           <p className={styles.heroDescription}>
             Find your fit and supercharge progress with our exciting career opportunities
           </p>
+           <p style={{ fontSize: "36px", fontWeight: "bold" }}>Apply Now</p>
         </div>
       </div>
 
       
-      <div className={styles.container}>
-        <h2 className={styles.title}>Apply now</h2>
+      <div >
+       
         <div 
           ref={formRef} 
           className={`${styles.formContainer} ${formVisible ? styles.formCardVisible : styles.formCardHidden}`}
