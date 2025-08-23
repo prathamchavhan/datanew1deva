@@ -148,7 +148,7 @@ const Header = ({ showHeader }) => {
 
       <div className="learn-btn">
         <a
-          href="http://localhost:5187/"
+          href="https://pratham0.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleLinkClick}
